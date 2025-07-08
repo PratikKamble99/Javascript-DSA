@@ -12,32 +12,40 @@ const removeDuplicates = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[i] == arr[j]) {
-        arr.splice(i, 1)
+        arr.splice(i, 1);
         i--;
-      };
+      }
     }
   }
-  return arr
-}
+  return arr;
+};
 
 // Approach 2
 const removeDuplicates2 = (arr) => {
-  return Array.from(new Set(arr))
+  return Array.from(new Set(arr));
 };
 
 // Approach 3
 const removeDuplicates3 = (arr) => {
-  if(arr.length <= 0) return 0
-  let i =0;
-  
+  if (arr.length <= 0) return 0;
+  let i = 0;
+
   for (let j = 1; j < arr.length; j++) {
-    if(arr[i] !== arr[j]){
+    if (arr[i] !== arr[j]) {
       i++;
-      arr[i] = arr[j]
+      arr[i] = arr[j];
     }
   }
-  return i+1
-}
+  return i + 1;
+};
 
-console.log(removeDuplicates3([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+// Approach 4
 
+const removeDuplicates4 = (arr) => {
+  return arr.filter((ele, index, self) => {
+    if (self.indexOf(ele) == index) return true;
+    return false;
+  });
+};
+
+console.log(removeDuplicates4([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
