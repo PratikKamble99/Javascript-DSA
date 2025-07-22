@@ -1,5 +1,6 @@
 // Implement memoize function
 
+// USING OBJECT
 function memoize(fn) {
   const cache = {};
   return function (...args) {
@@ -11,6 +12,21 @@ function memoize(fn) {
     // console.log("CALCULATED");
     cache[key] = fn.apply(this, args);
     return cache[key];
+  };
+}
+
+// USING MAP
+function memoize(fn) {
+  const map = new Map();
+  return function (...args) {
+    const key = JSON.stringify(args);
+    if (map.get(key)) {
+      console.log("From cached");
+      return map.get(key);
+    }
+    console.log("calculating...");
+    map.set(key, fn(...args));
+    return fn(...args);
   };
 }
 

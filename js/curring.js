@@ -1,6 +1,6 @@
 function curry(fn) {
   return function curried(...args) {
-    console.log(args.length, fn.length);
+    // console.log(args.length, fn.length);
     if (args.length >= fn.length) {
       return fn(...args);
     }
