@@ -1,29 +1,22 @@
-function longestSubString(str) {
-  const hash = new Map();
-  let left = 0;
-  let right = left;
-  let maxLength = 0;
-  let substr = "";
+var lengthOfLongestSubstring = function(s) {
+    if(!s.length) return 0
+    const obj = {};
 
-  while (right < str.length) {
-    if (hash.has(str[right])) {
-      if (hash.get(str[right]) >= left) {
-        left = hash.get(str[right]) + 1;
-      }
+    let left = 0;
+    let right = 0;
+    let max = 1;
+
+    while(right < s.length){
+        if(obj[s[right]] > -1){
+            left = Math.max(obj[s[right]] + 1, left)
+        }
+        obj[s[right]]= right
+        max = Math.max(right-left+1, max)
+        right++
     }
-    hash.set(str[right], right);
-    let length = right - left + 1;
+    return max
 
-    if (maxLength < length) {
-      maxLength = length;
-      substr = str.slice(left, right + 1);
-    }
-
-    right++;
-  }
-
-  console.log(maxLength, substr);
-}
+};
 
 longestSubString("cadbzabcds");
 longestSubString("pwwkew");
