@@ -1,6 +1,9 @@
 class HashTable {
-  table = new Array(4);
   numsOfItems = 0;
+
+  constructor(length) {
+    this.table = new Array(length);
+  }
 
   _resize() {
     const newTable = new Array(this.table.length * 2);
@@ -55,7 +58,7 @@ class HashTable {
   }
 }
 
-const ht = new HashTable();
+const ht = new HashTable(length);
 
 ht.set("name", "pratik");
 ht.set("na2", "pratw");
