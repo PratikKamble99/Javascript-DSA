@@ -7,6 +7,27 @@
 // Input: [1,1,2]               ----->>>>>  Output: 2, [1,2,_]
 // Input: [0,0,1,1,1,2,2,3,3,4] ----->>>>>  Output: 5, [0,1,2,3,4,_,_,_,_,_]
 
+// Optimal Approach: Using two pointers
+const removeDuplicatesOpt = (arr) => {
+  let i = 0; // return i+1 if ask count of elements after removing duplicates
+  let j = 1;
+
+  while(j<= arr.length-1){
+    if(arr[j]!== arr[i]){
+      arr[i+1] = arr[j]
+      i++;
+    }
+    j++
+  }
+
+  for(let k = i; k<arr.length; k++){
+    arr[k] = '_'
+  }
+  console.log(arr)
+}
+
+removeDuplicatesOpt([0,0,1,1,1,2,2,3,3,4])
+
 // Approach 1
 const removeDuplicates = (arr) => {
   for (let i = 0; i < arr.length; i++) {
@@ -48,4 +69,4 @@ const removeDuplicates4 = (arr) => {
   });
 };
 
-console.log(removeDuplicates4([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));
+// console.log(removeDuplicates4([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));

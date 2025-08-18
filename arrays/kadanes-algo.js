@@ -29,8 +29,6 @@ function maxSubArray(nums) {
 function maxSubArray2(nums) {
   let sum = 0;
   let largestSum = nums[0];
-  let startI=0;
-  let endI=0;
 
   for (let i = 0; i < nums.length; i++) {
     sum+=nums[i];

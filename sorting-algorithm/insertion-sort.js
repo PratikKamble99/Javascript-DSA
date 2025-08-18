@@ -8,6 +8,8 @@
 // best case: O(n) - when the array is already sorted
 // space complexity: O(1)
 
+//IN recursion version we eleminate outer forloop with recursive function
+
 function insertionSort(arr){
     const n = arr.length;
 
@@ -15,6 +17,7 @@ function insertionSort(arr){
         let j = i;
 
         // if j = 0 then arr[j - 1] will be undefined and will throw error index out of bound
+        // it iterate through 1 to end while comming backword
         while (j > 0 && arr[j - 1] > arr[j]) {
             let temp = arr[j];
             arr[j] = arr[j - 1];

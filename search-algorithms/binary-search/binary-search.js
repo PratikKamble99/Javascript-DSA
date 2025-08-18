@@ -16,12 +16,25 @@ function binarySearch(nums, target) {
     const middle = Math.floor((start + end) / 2);
 
     if (nums[middle] == target) return middle;
-    else if (target < nums[middle]) end = middle - 1;
+    if (target < nums[middle]) end = middle - 1;
     else start = middle + 1;
   }
 
   return -1
 }
 
-console.log(binarySearch([-1,0,3,5,9,12], 19))
+// console.log(binarySearch([-1,0,3,5,9,12], 9))
+
+// using recursion
+function binarySearchRec(nums, target, start, end) {
+  if(start > end) return -1
+
+  const middle = Math.trunc((start + end) / 2);
+  if (nums[middle] == target) return middle;
+  
+  if (target < nums[middle]) return binarySearchRec(nums, target, start, middle - 1);
+  else return binarySearchRec(nums, target, middle + 1, end);
+}
+
+console.log(binarySearchRec([-1,0,3,5,9,12], 0, 0, 5))
 
