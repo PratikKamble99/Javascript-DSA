@@ -8,31 +8,60 @@
 // Input: "([]{})"         ----->>>>>        Output: true
 // Input: "(]"             ----->>>>>        Output: false
 
-function validParenthisis(str) {
+function validParenthisis(s) {
   const stack = [];
 
-  for (i = 0; i < str.length; i++) {
-    const char = str[i];
-    if (char == "(" || char == "[" || char == "{") {
-      stack.push(char)
-    } else if (
-      (char == ')' && lastEle(stack) == '(') || 
-      (char == ']' && lastEle(stack) == '[') || 
-      (char == '}' && lastEle(stack) == '{')
-    ) {
-      stack.pop();
+  if (s.length == 1) return false;
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+
+    if (char == "[" || char == "(" || char == "{") {
+      stack.push(char);
+    } else {
+      stack.push(char);
+      const lastChar = stack[stack.length - 2];
+      if (
+        (char == ")" && lastChar == "(") ||
+        (char == "}" && lastChar == "{") ||
+        (char == "]" && lastChar == "[")
+      ) {
+        stack.pop();
+        stack.pop();
+      }
     }
-
   }
-  if (stack.length == 0) return true
-  return false
 
-};
-
-function lastEle(stack) {
-  return stack[stack.length - 1]
+  if (stack.length == 0) return true;
+  return false;
 }
 
-console.log(validParenthisis("([]{})"))
-console.log(validParenthisis("()"))
-console.log(validParenthisis("(]"))
+function validParenthisisOptimized(s) {
+  const stack = [];
+
+  for (let i = 0; i < s.length; i++) {
+    let c = s.charAt(i);
+    switch (c) {
+      case "(":
+        stack.push(")");
+        break;
+      case "[":
+        stack.push("]");
+        break;
+      case "{":
+        stack.push("}");
+        break;
+      default:
+        if (c !== stack.pop()) {
+          return false;
+        }
+    }
+  }
+
+  return stack.length === 0;
+}
+
+console.log(validParenthisis("([]{})"));
+console.log(validParenthisis("()"));
+console.log(validParenthisis("(]"));
+console.log(validParenthisis(")[]"));

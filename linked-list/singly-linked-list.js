@@ -23,6 +23,7 @@ class LinkedList {
   addLast(data) {
     const newNode = new Node(data);
 
+    // base case - if head is null
     if (!this.head) {
       newNode.next = this.head;
       this.head = newNode;
@@ -42,6 +43,7 @@ class LinkedList {
 
     const newNode = new Node(data);
 
+    // index 0 meanse at first place
     if (index == 0) {
       newNode.next = this.head;
       this.head = newNode;
