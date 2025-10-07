@@ -69,4 +69,30 @@ const removeDuplicates4 = (arr) => {
   });
 };
 
+function solution(a){
+   
+    const result = [];
+    let start = 0
+
+    while(start < a.length){
+        if(!result.includes(a[start])) result.push(a[start])
+        ++start
+    }
+
+    start = a.length - result.length
+    console.log(start, a.length)
+    
+
+    while(start < a.length-1) {
+        result.push('_')
+        start++
+    }
+
+    return result
+
+}
+
+
+console.log(solution([1, 1, 2])) 
+
 // console.log(removeDuplicates4([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]));

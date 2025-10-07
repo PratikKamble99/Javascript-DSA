@@ -1,3 +1,22 @@
+function solution(a){
+    let max = 0
+
+    for (let i = 0; i < a.length; i++) {
+        let sub = ''
+        for (let j = i; j < a.length; j++) {
+            const char = a[j]
+            if(sub.includes(char)){
+                max = Math.max(max, sub.length)
+                break
+            }
+            sub+=char
+        }
+    }
+
+    return max
+
+}
+
 var lengthOfLongestSubstring = function(s) {
     if(!s.length) return 0
     const obj = {};

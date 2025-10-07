@@ -1,28 +1,18 @@
-// Ques 1 - Palindrome Number
-// An integer is a palindrome when it reads the same forward and backward.
+function solution(a){
+    let start = 0;
+    let end  = a.length-1;
 
-// Input: x = 121  ----->>>>>   Output: true
-// Input: x = 10   ----->>>>>   Output: false
+    while(start<end){
+        console.log(a[start], a[end])
+        if(a[start] !== a[end]) return false
+        start++
+        end--
+    }
+    return true
 
-// palindrome number uses same logic
-function palindromeNumber(number) {
-  if (number < 0) return false;
-  // using inbuild functions
-  // const reverse = String(number).split('').reverse().join('')
-  // return +reverse == number
-
-  // without using inbuild
-  let rev = 0;
-  while (number > 0) {
-    rem = number % 10;
-    rev = rev * 10 + rem;
-    number = Math.trunc(number / 10);
-  }
-
-  return rev == number;
 }
 
-console.log(palindromeNumber(212));
+console.log(solution('hello'))
 
 // Ques 3 - Palindrome String
 function palindromeString(str) {
