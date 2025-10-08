@@ -3,7 +3,6 @@ function solution(a){
     let end  = a.length-1;
 
     while(start<end){
-        console.log(a[start], a[end])
         if(a[start] !== a[end]) return false
         start++
         end--

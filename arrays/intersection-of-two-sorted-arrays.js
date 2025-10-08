@@ -1,4 +1,4 @@
-// Intersection means fonding common elements from both arrays exact same count
+// Intersection means finding common elements from both arrays exact same count
 
 // Input 
 // arr1 = [1, 1, 2, 2, 3, 3, 4, 5, 5, 6]

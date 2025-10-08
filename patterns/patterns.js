@@ -21,6 +21,37 @@ function pattern1(n) {
   }
   console.log(str);
 }
+
+/* 
+
+      * 
+     * * 
+    * * * 
+   * * * * 
+  * * * * * 
+
+
+*/
+
+function pattern(){
+  let str = '';
+  const n = 5;
+  for (let row = 0; row < n; row++) {
+      // print rows
+      for (let j = 0; j <= n-row ; j++) {
+          // print spaces
+          str+=' '
+      }
+      for (let j = 0; j < row+1; j++) {
+          // print stars
+          str+='* '
+      }
+      str+='\n'
+      
+}
+}
+
+
 function pattern2(n) {
   /*
    
