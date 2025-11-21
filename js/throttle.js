@@ -11,8 +11,21 @@ function throttle(func, delay) {
   };
 }
 
+function throttle2(func, delay){
+  let timer;
+
+  return function(...args){
+    if(!timer){
+      timer = setTimeout(()=>{
+        func(...args);
+        timer = null
+      }, delay)
+    }
+  }
+}
+
 // What exacly it does
-// It uses closure : it chech lasttime in millis with current time. If there differnce
+// It uses closure : it check lasttime in millis with current time. If there differnce
 // is greater than delay then it exeutes function.
 
 function logScroll() {

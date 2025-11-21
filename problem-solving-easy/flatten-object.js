@@ -3,6 +3,13 @@
   And updating path if object is nested
 */
 
+/* 
+
+if type if Object then create or append key to path // let newPath = `${path}${key}.`
+else set value to created path // result[newPath] = value
+
+*/
+
 function flattenObject(obj) {
       const result = {}
 

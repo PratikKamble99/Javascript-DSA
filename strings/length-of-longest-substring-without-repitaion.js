@@ -13,6 +13,7 @@ function solution(a){
         }
     }
 
+    console.log(max)
     return max
 
 }
@@ -37,10 +38,10 @@ var lengthOfLongestSubstring = function(s) {
 
 };
 
-longestSubString("cadbzabcds");
-longestSubString("pwwkew");
-longestSubString("abcabcdd");
-longestSubString("bbbb");
+solution("cadbzabcds");
+solution("pwwkew");
+solution("abcabcdd");
+solution("bbbb");
 
 /* 
 
