@@ -64,7 +64,8 @@ Golden Rule (Memorize This Table) - Identify which time complexity is required j
 | Sort               | **O(N log N)** |
 | HashMap get/set    | **O(1)** avg   |
 
-7. Common Hidden Traps
+🔹 7. Common Hidden Traps
+
 | Code                   | Real Complexity |
 | ---------------------- | --------------- |
 | `loop → includes()`    | **O(N²)**       |
