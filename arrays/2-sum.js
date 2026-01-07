@@ -11,8 +11,7 @@ function twoSum1(nums, target){
   }
   return -1
 }
-console.log(twoSum1([2, 17, 11, 7], 9));
-
+// console.log(twoSum1([2, 17, 11, 7], 9));
 
 // Optimal
 // O(n) = nlogn
@@ -28,4 +27,17 @@ var twoSum = function (nums, target) {
   }
 };
 
-// console.log(twoSum([2, 7, 11, 15], 17));
+function twoSum2Pointer(nums, target){
+  let start = 0;
+  let end = nums.length-1;
+  while(start <= end){
+    const sum = nums[start]+nums[end];
+    if(sum == target) return [start, end]
+    else if(sum > target) end--
+    else start++
+  }
+  return []
+
+}
+
+console.log(twoSum2Pointer([2, 7, 11, 15], 13));

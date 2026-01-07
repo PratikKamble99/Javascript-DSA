@@ -1,4 +1,4 @@
-// binary sort is mostly used when data is in sorted manner. It uses two pointer method( low, mid and high )
+// binary sort is mostly used when data is in sorted manner. It uses two pointer method( low, mid and high ) and Divide and conquer approach 
 
 // Ques 2: Implement Binary Search in JavaScript
 // Given an array of integers nums which is sorted in ascending order, and an integer target,
@@ -7,6 +7,17 @@
 
 // Input: nums = [-1,0,3,5,9,12], target = 9  ----->>>>>  Output:  4
 // Input: nums = [-1,0,3,5,9,12], target = 2  ----->>>>>  Output: -1
+
+/* 
+  WHERE TO USE
+  1. Space Properties: Problems where the space is sorted, monotonic, bounded.
+  2. Function trend: Problems mentioning increasing or decreasing function.
+  3. Pick an option: Pick an option from a range to satisfy
+  4. Minimum Value: Problems asking to find the minimum value.
+  5. Achive Target: Can you achive X within Y time/budget/resources
+  6. Earlist/Latest Point: Problems asking for earlist or latest time.
+
+*/
 
 // O(log n)
 function binarySearch(nums, target) {

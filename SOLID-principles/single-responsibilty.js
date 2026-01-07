@@ -1,5 +1,5 @@
 /* 
-    Single responsibilty principle
+    Single responsibility principle
     Every class or module should only be responsible for one part of the functionality. 
 
 */
